@@ -1,4 +1,4 @@
-# dprkshow_vuecli
+# 朝鲜国际健康及体育科技展前端Vue-Cli版本
 
 ## Project setup
 ```
