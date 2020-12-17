@@ -1,0 +1,34 @@
+#crumbs {
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+#article-container {
+    width: 800px;
+    margin: 0 auto;
+}
+article h2 {
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 30px;
+}
+#article-container p{
+    text-align: justify;
+    font-size: 14px;
+    text-indent: 2em;
+    margin-bottom: 15px;
+    line-height: 25px;
+}
+article img {
+    display: block;
+    margin: 20px auto;
+}
+#pager {
+    width: 700px;
+    margin: 0 auto;
+}
+#pager a{
+    display: block;
+    margin: 50px 0;
+    font-size: 14px;
+}
