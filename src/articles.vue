@@ -43,7 +43,7 @@ export default {
   methods: {
     fetch_data: function (currentPage = '1') {
       var that = this
-      axios.get('http://localhost:9001/api/articles/', {
+      axios.get('http://8.131.233.42:8002/api/articles/', {
         params: {
           page: currentPage,
           ordering: '-aid'

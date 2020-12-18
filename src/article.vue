@@ -57,7 +57,7 @@ export default {
 
     get_count: function () {
       var that = this
-      axios.get('http://localhost:9001/api/articles/').then(
+      axios.get('http://8.131.233.42:8002/api/articles/').then(
         function (response) {
           that.count = response.data.count
         },
@@ -77,7 +77,7 @@ export default {
 
     fetch_data: function () {
       var that = this
-      var url = 'http://localhost:9001/api/article/' + that.aid + '/'
+      var url = 'http://8.131.233.42:8002/api/article/' + that.aid + '/'
       axios.get(url).then(
         function (response) {
           that.article = response.data
