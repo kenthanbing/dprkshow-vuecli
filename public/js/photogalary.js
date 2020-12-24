@@ -74,7 +74,3 @@ function changepb() {
 }
 
 inidata();
-
-$(document).on("click", "#tbcc img", function () {
-    console.log("catch you")
-})

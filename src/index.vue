@@ -2,7 +2,7 @@
 <!-- 文章列表 -->
 <div id="articles-container" class="w">
     <table class="articles-list">
-        <caption> <a href="articles.html">市场信息</a> </caption>
+        <caption> <a href="articles.html">朝鲜市场信息</a> </caption>
         <tr v-for="(article, index) in articles" :key="index">
             <td> <a :href="'article.html#/?aid=' + article.aid"><img style="border-radius: 10px;" :src="article.snap" alt=""></a></td>
             <td>

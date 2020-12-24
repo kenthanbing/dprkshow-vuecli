@@ -1,5 +1,9 @@
 <template>
 <div id="articles-page" class="w">
+  <!-- 面包屑导航 -->
+  <div id="crumbs" class="w">
+    <p> <a href="index.html">首页</a> > <a href="articles.html">市场信息</a> </p>
+  </div>
   <div style="height: 800px;">
       <table class="articles-list">
           <caption> 朝鲜市场信息 </caption>

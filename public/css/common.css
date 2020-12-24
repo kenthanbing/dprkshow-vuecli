@@ -12,7 +12,15 @@
 .style_red {
     color: #c81623;
 }
-
+.userForm{
+    width: 600px;
+}
+.formTitle{
+    display: block;
+    width: 400px;
+    margin: 40px auto 20px auto;
+    font-size: 30px;
+}
 /* header 头部制作 */
 header {
     height: 150px;
@@ -22,11 +30,19 @@ header {
 #exhibition-name {
     display: block;
     line-height: 150px;
-    font-size: 50px;
+    font-size: 44px;
+    margin-left: 15px;
     }
 #exhibition-name a:hover{
     color: #666;
     }
+
+/* 面包屑导航 */
+#crumbs {
+    margin-top: 30px;
+    font-size: 18px;
+    margin-left: 30px;
+}
 
 /* footer制作 */
 footer {

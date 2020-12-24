@@ -1,8 +1,8 @@
 <template>
 
-<div id="article-page" v-if="article!=null">
+<div id="article-page" class="w" v-if="article!=null">
   <!-- 面包屑导航 -->
-  <div id="crumbs" class="w">
+  <div id="crumbs">
     <p> <a href="index.html">首页</a> > <a href="articles.html">市场信息</a> >  {{ article.title }} </p>
   </div>
   <!-- 文章内容 -->
@@ -45,14 +45,12 @@ export default {
   },
   methods: {
     init_aid: function () {
-      console.log('123123123123123')
       if (this.$route.query.aid) {
         this.aid = this.$route.query.aid
       } else {
         this.aid = '1'
         this.$route.query.aid = this.aid
       }
-      console.log(this.aid)
     },
 
     get_count: function () {
