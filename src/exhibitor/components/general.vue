@@ -1,23 +1,6 @@
 <template>
-<div class="w">
-  <!-- 面包屑导航 -->
-  <div id="crumbs">
-    <p> <a href="index.html">首页</a> > <a href="exhibitor.html#/home">参展商服务</a> > 参展商注册 </p>
-  </div>
-  <div class="formTitle">
-    <span>欢迎注册成为参展商</span>
-  </div>
-  <div class="userForm">
-    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="ruleForm.username"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="确认密码" prop="password2">
-        <el-input type="password" v-model="ruleForm.password2" autocomplete="off"></el-input>
-      </el-form-item>
+  <div style="margin-left: 40px" class="userForm">
+    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="94px">
       <el-form-item label="公司名称" prop="company">
         <el-input v-model="ruleForm.company"></el-input>
       </el-form-item>
@@ -70,39 +53,19 @@
         <el-input type="textarea" v-model="ruleForm.intro"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">立即注册</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm')">立即修改</el-button>
+        <el-button @click="fetchData()">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-  name: 'register',
+  name: 'general',
   data () {
-    // 自定义密码验证规则
-    var validatePass = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请输入密码'))
-      } else {
-        if (this.ruleForm.password2 !== '') {
-          this.$refs.ruleForm.validateField('password2')
-        }
-        callback()
-      }
-    }
-    var validatePass2 = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请再次输入密码'))
-      } else if (value !== this.ruleForm.password) {
-        callback(new Error('两次输入密码不一致!'))
-      } else {
-        callback()
-      }
-    }
     return {
+      eid: window.sessionStorage.getItem('eid'),
       nations: [{
         value: 'CN',
         label: '中国'
@@ -295,9 +258,6 @@ export default {
       ],
       value: '',
       ruleForm: {
-        username: '',
-        passowrd: '',
-        password2: '',
         company: '',
         section: '',
         contact: '',
@@ -309,17 +269,6 @@ export default {
         intro: ''
       },
       rules: {
-        username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, message: '用户名长度在3个字符以上', trigger: 'blur' }
-        ],
-        password: [
-          { required: true, validator: validatePass, trigger: 'blur' },
-          { min: 6, message: '密码长度在6个字符以上', trigger: 'blur' }
-        ],
-        password2: [
-          { required: true, validator: validatePass2, trigger: 'blur' }
-        ],
         company: [
           { required: true, message: '请输入公司名称', trigger: 'blur' }
         ],
@@ -346,16 +295,15 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const that = this
-          this.$http.post('register/', this.ruleForm).then(
+          this.$http.put('info/?eid=' + that.eid, this.ruleForm).then(
             function (response) {
               if (response.data.code === 200) {
                 that.$msg({
-                  message: '恭喜您，注册成功！',
+                  message: '恭喜您，修改成功！',
                   type: 'success'
                 })
-                that.$router.push('/login')
               } else {
-                that.$msg.error('服务器错误，注册失败')
+                that.$msg.error('服务器错误，修改失败')
               }
             },
             function (err) {
@@ -368,15 +316,32 @@ export default {
         }
       })
     },
-    resetForm (formName) {
-      this.$refs[formName].resetFields()
+    fetchData () {
+      const that = this
+      this.$http.get('info/?eid=' + that.eid).then(
+        function (response) {
+          that.ruleForm.company = response.data.data.info.company
+          that.ruleForm.section = response.data.data.info.section
+          that.ruleForm.contact = response.data.data.info.contact
+          that.ruleForm.tel = response.data.data.info.tel
+          that.ruleForm.position = response.data.data.info.position
+          that.ruleForm.nation = response.data.data.info.nation
+          that.ruleForm.email = response.data.data.info.email
+          that.ruleForm.address = response.data.data.info.address
+          that.ruleForm.intro = response.data.data.info.intro
+        },
+        function (err) {
+          console.log(err)
+        }
+      )
     }
+  },
+  mounted: function () {
+    this.fetchData()
   }
 }
 </script>
 
 <style>
-  .userForm {
-    margin: 0 auto;
-  }
+
 </style>

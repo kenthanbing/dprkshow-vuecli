@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import article from './article.vue'
 import VueRouter from 'vue-router'
-import header from './components/header.vue'
-import footer from './components/footer.vue'
+import pageheader from './components/pageheader.vue'
+import pagefooter from './components/pagefooter.vue'
 import { Button } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -16,9 +16,9 @@ new Vue({
 }).$mount('#article-page')
 
 new Vue({
-  render: h => h(header)
+  render: h => h(pageheader)
 }).$mount('header')
 
 new Vue({
-  render: h => h(footer)
+  render: h => h(pagefooter)
 }).$mount('footer')

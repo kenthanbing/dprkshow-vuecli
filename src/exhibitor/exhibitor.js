@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import exhibitor from './exhibitor.vue'
-import header from '../components/header.vue'
-import footer from '../components/footer.vue'
+import pageheader from '../components/pageheader.vue'
+import pagefooter from '../components/pagefooter.vue'
 
 import {
-  Form, FormItem, Input, Select, Option, Col, DatePicker, TimePicker,
-  Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Button
+  Row, Form, FormItem, Input, Select, Option, Col, DatePicker, TimePicker,
+  Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Button, Message, Link
 } from 'element-ui'
 
 import 'element-ui/lib/theme-chalk/index.css'
@@ -18,6 +18,7 @@ axios.defaults.baseURL = 'http://127.0.0.1:8002/api/exhibitor/'
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+Vue.use(Row)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
@@ -32,6 +33,8 @@ Vue.use(CheckboxGroup)
 Vue.use(Radio)
 Vue.use(RadioGroup)
 Vue.use(Button)
+Vue.use(Link)
+Vue.prototype.$msg = Message
 
 Vue.use(VueRouter)
 
@@ -41,9 +44,9 @@ new Vue({
 }).$mount('#exhibitordiv')
 
 new Vue({
-  render: h => h(header)
+  render: h => h(pageheader)
 }).$mount('header')
 
 new Vue({
-  render: h => h(footer)
+  render: h => h(pagefooter)
 }).$mount('footer')
