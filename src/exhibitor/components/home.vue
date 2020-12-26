@@ -22,7 +22,7 @@
     <div id="files">
       <el-row>
         <el-col :span="7">
-          <a href="#">
+          <a href="attachments/manual.doc">
             <div class="grid-content bg-purple">
               <img src="images/filedown/manual.png">
               <p>下载参展手册</p>
@@ -30,7 +30,7 @@
           </a>
         </el-col>
         <el-col :span="7">
-          <a href="#">
+          <a href="attachments/furniture.xlsx">
             <div class="grid-content bg-purple-dark">
               <img src="images/filedown/furniture.png">
               <p>下载增租道具表</p>
@@ -38,7 +38,7 @@
           </a>
         </el-col>
         <el-col :span="7">
-          <a href="#">
+          <a href="attachments/tour.doc">
             <div class="grid-content bg-purple">
               <img src="images/filedown/tour.png">
               <p>下载随团登记表</p>
@@ -48,7 +48,7 @@
       </el-row>
       <el-row>
         <el-col :span="7">
-          <a href="#">
+          <a href="attachments/visa.pdf">
             <div class="grid-content bg-purple-dark">
               <img src="images/filedown/visa.png">
               <p>下载签证申请表</p>
@@ -56,7 +56,7 @@
           </a>
         </el-col>
         <el-col :span="7">
-          <a href="#">
+          <a href="attachments/catalogue.docx">
             <div class="grid-content bg-purple">
               <img src="images/filedown/catalogue.png">
               <p>下载会刊登记表</p>
@@ -64,7 +64,7 @@
           </a>
         </el-col>
         <el-col :span="7">
-          <a href="#">
+          <a href="attachments/meeting.docx">
             <div class="grid-content bg-purple-dark">
               <img src="images/filedown/meeting.png">
               <p>下载同期活动报名表</p>

@@ -1,27 +1,14 @@
 <template>
-<div class="w">
-  <!-- 面包屑导航 -->
-  <div id="crumbs">
-    <p> <a href="index.html">首页</a> > <a href="exhibitor.html#/home">参展商服务</a> > 参展商注册 </p>
-  </div>
-  <div class="formTitle">
-    <span>欢迎注册成为参展商</span>
+<div>
+  <div style="width: 550px" class="formTitle">
+    <span>尊敬的采购商您好！请提交注册信息</span>
   </div>
   <div class="userForm">
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="ruleForm.username"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="确认密码" prop="password2">
-        <el-input type="password" v-model="ruleForm.password2" autocomplete="off"></el-input>
-      </el-form-item>
       <el-form-item label="公司名称" prop="company">
         <el-input v-model="ruleForm.company"></el-input>
       </el-form-item>
-      <el-form-item label="所属行业" prop="section">
+      <el-form-item label="寻找产品" prop="section">
         <el-select v-model="ruleForm.section" placeholder="请选择所属行业">
           <el-option label="健康消费品" value="健康消费品"></el-option>
           <el-option label="医疗器具" value="医疗器具"></el-option>
@@ -80,28 +67,8 @@
 
 <script>
 export default {
-  name: 'register',
+  name: 'submit',
   data () {
-    // 自定义密码验证规则
-    var validatePass = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请输入密码'))
-      } else {
-        if (this.ruleForm.password2 !== '') {
-          this.$refs.ruleForm.validateField('password2')
-        }
-        callback()
-      }
-    }
-    var validatePass2 = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请再次输入密码'))
-      } else if (value !== this.ruleForm.password) {
-        callback(new Error('两次输入密码不一致!'))
-      } else {
-        callback()
-      }
-    }
     return {
       nations: [{
         value: 'CN',
@@ -346,9 +313,6 @@ export default {
       ],
       value: '',
       ruleForm: {
-        username: '',
-        passowrd: '',
-        password2: '',
         company: '',
         section: '',
         contact: '',
@@ -360,17 +324,6 @@ export default {
         intro: ''
       },
       rules: {
-        username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, message: '用户名长度在3个字符以上', trigger: 'blur' }
-        ],
-        password: [
-          { required: true, validator: validatePass, trigger: 'blur' },
-          { min: 6, message: '密码长度在6个字符以上', trigger: 'blur' }
-        ],
-        password2: [
-          { required: true, validator: validatePass2, trigger: 'blur' }
-        ],
         company: [
           { required: true, message: '请输入公司名称', trigger: 'blur' }
         ],
@@ -397,14 +350,15 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const that = this
-          this.$http.post('register/', this.ruleForm).then(
+          this.$http.post('submit/', this.ruleForm).then(
             function (response) {
               if (response.data.code === 200) {
                 that.$msg({
                   message: '恭喜您，注册成功！',
                   type: 'success'
                 })
-                that.$router.push('/login')
+                window.sessionStorage.setItem('bid', response.data.data.bid)
+                that.$router.push('/congrat')
               } else {
                 that.$msg.error('服务器错误，注册失败')
               }

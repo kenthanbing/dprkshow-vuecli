@@ -16,5 +16,9 @@ module.exports = {
             entry: './src/exhibitor/exhibitor.js',
             template: './public/exhibitor.html',
         },
+        buyer: {
+            entry: './src/buyer/buyer.js',
+            template: './public/buyer.html',
+        },        
     }  
 }
