@@ -1,11 +1,6 @@
-#crumbs {
-    margin-top: 30px;
-    font-size: 20px;
-    margin-bottom: 30px;
-}
 #article-container {
     width: 800px;
-    margin: 0 auto;
+    margin: 40px auto 0px auto;
 }
 article h2 {
     text-align: center;
