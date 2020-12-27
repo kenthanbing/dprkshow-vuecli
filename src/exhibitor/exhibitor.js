@@ -14,7 +14,7 @@ import router from './router.js'
 
 import axios from 'axios'
 // 配置请求的根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8002/api/exhibitor/'
+axios.defaults.baseURL = 'http://8.131.233.42:8002/api/exhibitor/'
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
