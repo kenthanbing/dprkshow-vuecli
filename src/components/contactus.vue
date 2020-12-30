@@ -40,7 +40,7 @@ export default {
   methods: {
     submitForm (formName) {
       const that = this
-      this.$http.post('http://8.131.233.42:8002/api/contactus/submit/', this.contactForm).then(
+      this.$http.post('https://dprkshow.top:8002/api/contactus/submit/', this.contactForm).then(
         function (response) {
           that.$msg({
             message: '提交成功！谢谢您的留言，我们会尽快处理。',
