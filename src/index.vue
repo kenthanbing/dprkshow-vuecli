@@ -16,8 +16,6 @@
 
 <script>
 
-const axios = require('axios')
-
 export default {
   name: 'index',
   data: function () {
@@ -31,7 +29,7 @@ export default {
   methods: {
     fetch_data: function () {
       var that = this
-      axios.get('http://8.131.233.42:8002/api/articles/', {
+      this.$http.get('http://8.131.233.42:8002/api/articles/', {
         params: { ordering: '-aid' }
       }).then(
         function (response) {

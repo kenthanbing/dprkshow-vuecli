@@ -61,27 +61,39 @@ video{
 
 #more a{
     float: right;
-    font-size: 30px;
-    padding-right: 70px;
+    font-size: 28px;
+    padding-right: 50px;
+}
+#moreplus {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 20px 30px 30px 120px;
 }
 /*市场信息*/
 .articles-list {
     border-collapse: separate;
-    border-spacing: 50px;
+    border-spacing: 10px;
+
 }
 .articles-list caption {
     font-size: 30px;
+    margin-bottom: 30px;
+}
+.articles-list td{
+    vertical-align: top;
 }
 .articles-list p{
     text-indent: 2em;
     line-height: 25px;
     display: block;
-    padding: 20px;
+    padding-left: 10px;
     font-size: 16px;
+    width: 600px;
 }
 .articles-list h2{
     display: block;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
 }
 #articles-container p {
     text-align: justify;
@@ -90,14 +102,13 @@ video{
 /*往届数据*/
 #charts caption{
     font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
-#charts {
-    margin-top: 30px;
-    border-collapse: separate;
-    /* border-spacing: 20px 30px; */
-    text-align: center;
-    font-size: 16px;
-    line-height: 60px;
+#charts td {
+    width: 590px;
+    height: 420px;
+    padding: 0px 30px 0 30px;
 }
 
 /*展会图片*/
@@ -107,6 +118,7 @@ video{
 }
 #photo-gala caption {
     font-size: 30px;
+    margin-top: 50px;
 }
 #photo-gala span {
     font-size: 40px;
@@ -125,6 +137,9 @@ video{
     border-collapse: separate;
     border-spacing: 15px;
     text-align: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 20px 0;
 }
 #endorses caption {
     font-size: 30px;

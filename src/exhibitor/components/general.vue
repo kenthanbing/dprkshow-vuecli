@@ -2,7 +2,7 @@
   <div style="margin-left: 40px" class="userForm">
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="94px">
       <el-form-item label="公司名称" prop="company">
-        <el-input v-model="ruleForm.company"></el-input>
+        <el-input v-model="ruleForm.company" prefix-icon="iconfont icon-gongsimingcheng"></el-input>
       </el-form-item>
       <el-form-item label="所属行业" prop="section">
         <el-select v-model="ruleForm.section" placeholder="请选择所属行业">
@@ -16,10 +16,10 @@
         </el-select>
       </el-form-item>
       <el-form-item label="联系人" prop="contact">
-        <el-input v-model="ruleForm.contact"></el-input>
+        <el-input v-model="ruleForm.contact" prefix-icon="iconfont icon-ziyuan"></el-input>
       </el-form-item>
       <el-form-item label="联系电话" prop="tel">
-        <el-input v-model="ruleForm.tel"></el-input>
+        <el-input v-model="ruleForm.tel" prefix-icon="iconfont icon-tel"></el-input>
       </el-form-item>
       <el-form-item label="职位" prop="position">
         <el-select v-model="ruleForm.position" placeholder="请选择职位">
@@ -44,10 +44,10 @@
         </el-select>
       </el-form-item>
       <el-form-item label="邮箱" prop="email">
-        <el-input v-model="ruleForm.email"></el-input>
+        <el-input v-model="ruleForm.email" prefix-icon="iconfont icon-email"></el-input>
       </el-form-item>
       <el-form-item label="公司地址" prop="address">
-        <el-input v-model="ruleForm.address"></el-input>
+        <el-input v-model="ruleForm.address" prefix-icon="iconfont icon-dizhi"></el-input>
       </el-form-item>
       <el-form-item label="公司简介" prop="intro">
         <el-input type="textarea" v-model="ruleForm.intro"></el-input>

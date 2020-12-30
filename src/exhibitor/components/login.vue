@@ -11,10 +11,10 @@
     <div class="userForm">
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
         <el-form-item label="用户名" prop="username">
-          <el-input style="width: 400px" v-model="ruleForm.username"></el-input>
+          <el-input style="width: 400px" v-model="ruleForm.username" prefix-icon="iconfont icon-user"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input style="width: 400px" type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+          <el-input style="width: 400px" type="password" v-model="ruleForm.password" autocomplete="off" prefix-icon="iconfont icon-password"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">立即登录</el-button>

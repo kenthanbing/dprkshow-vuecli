@@ -3,6 +3,9 @@ import buyer from './buyer.vue'
 import pageheader from '../components/pageheader.vue'
 import pagefooter from '../components/pagefooter.vue'
 
+// 字体图标
+import '../../public/fonts/iconfont.css'
+
 import VueRouter from 'vue-router'
 import router from './router.js'
 

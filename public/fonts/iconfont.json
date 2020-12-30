@@ -1,0 +1,86 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1138740",
+      "name": "tel",
+      "font_class": "tel",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "1167161",
+      "name": "公司名称",
+      "font_class": "gongsimingcheng",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "1189644",
+      "name": "匹配职位-填充",
+      "font_class": "pipeizhiwei",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "1358424",
+      "name": "国家（pitch on）",
+      "font_class": "guojiapitchon",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "1388130",
+      "name": "password",
+      "font_class": "password",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "5524683",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e50f",
+      "unicode_decimal": 58639
+    },
+    {
+      "icon_id": "6427814",
+      "name": "联系人",
+      "font_class": "ziyuan",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "10793071",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "10939153",
+      "name": "简介",
+      "font_class": "jianjie",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "11346882",
+      "name": "行业",
+      "font_class": "hangye",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "15282651",
+      "name": "地址",
+      "font_class": "dizhi",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    }
+  ]
+}
