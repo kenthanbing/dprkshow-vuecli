@@ -4,6 +4,9 @@ import exhibitor from './exhibitor.vue'
 import pageheader from '../components/pageheader.vue'
 import pagefooter from '../components/pagefooter.vue'
 
+// 字体图标
+import '../../public/fonts/iconfont.css'
+
 import {
   Row, Form, FormItem, Input, Select, Option, Col,
   Button, Message, Link
